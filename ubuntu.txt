@@ -1,0 +1,251 @@
+from http://www.whitwellhigh.com/ubuntu.txt
+Ubuntu 10.04LTS and Ubuntu 12.04
+
+How to reset your Ubuntu password (if you do not know it)
+1. From the boot menu, select recovery mode, which is usually the second boot option. 
+(If you do not see it press or hold down the shift key during booting)
+2. root    Drop to root shell prompt 
+(if you have forgotten your username as well, type ls /home)
+Find your user name account
+3. passwd username
+4. You'll then be prompted for a new password (asked to confirm it)
+5. After changing your password, use the following commands to reboot your system. 
+(The sync command makes sure to write out data to the disk before rebooting)
+6. sync (and then type) reboot –f
+----------------------------------------------------------------------------------------------
+
+Completely removing Wine: In case you want to completely remove Wine, the ususal uninstall 
+command would leave you wondering what went wrong. It will uninstall Wine but leave the 
+folders under the Applications menu. If you want a complete uninstall, execute the 
+following commands in Terminal in the following order.
+
+sudo apt-get remove wine
+rm -rf $HOME/.wine
+rm -f $HOME/.config/menus/applications-merged/wine*
+rm -rf $HOME/.local/share/applications/wine
+rm -f $HOME/.local/share/desktop-directories/wine*
+rm -f $HOME/.local/share/icons/????_*.xpm
+
+----------------------------------------------------------------------------------------------
+
+These commands are to be entered into the Terminal to give Ubuntu more features.
+
+Adding the Repository
+sudo wget --output-document=/etc/apt/sources.list.d/medibuntu.list http://www.medibuntu.org/sources.list.d/$(lsb_release -cs).list && sudo apt-get --quiet update && sudo apt-get --yes --quiet --allow-unauthenticated install medibuntu-keyring && sudo apt-get --quiet update
+
+w32codecs Needed for OS
+sudo apt-get install w32codecs
+
+Playing Encryted DVDs
+sudo apt-get install libdvdcss2
+
+Ubuntu Restricted Extras
+sudo apt-get install ubuntu-restricted-extras
+-------------------------------------------------------------------------------------------------------------
+
+These are software packages that I have evaluated and installed in my Ubuntu Computers.
+-------------------------------------------------------------------------------------------------------------
+1.gtk-recordMyDesktop (lets you record a screen cast of your desktop - ..ogv format only)
+I recommand chaning your audio to 11025 Hz under the advanced tab. Plus, change 10fps underneath the 
+Performance tab. The other settings should be fine. You will need to use DeVeDe (AVI-MP4 option to convert it) 
+and use Avidemux to edit the video file (save under Auto settings to FLV)
+
+2.Rhythmbox Music Player - You can Sync your IPOD with this and other Audio USB players.It can import your music 
+folders and even change your music files to the OGG format. Rhythmbox can even your other audio files. You will 
+need to install WinFF to convert strange audio formats that RhythomBox can play.
+
+3.Cheese Web Cam Booth - (lets you record video/pictures with your webcam - ogv format only) 
+This does not work within Gtk-recordmydesktop.
+
+4.GuvcView web cam software and photo taker. Lots of Video formats. Works within Gtk-recordmydesktop and Kazam.
+
+5.TeamViewer - is a great for working on your friends computer that is in another city, state, or country.
+It allows you the ability to access anyone's computer that also has teamviewer installed. You will be given
+an unique ID and either a Dynamic Password or a Personal Password for access to those computers.
+
+6.Kdenlive (equalivant to windows movie maker) Takes a long time to RENDER the projects. Great green screen options.
+
+7.Audacity (record sound into multiple formats and import/export functions). Can be used home recording studio.
+
+8.DeVEDe (great at converting OGV to AVI format + Pick Divx/Mpeg4 + add + adv. Options + Choose Default Format: NTSC)
+
+9.WinFF (great for coverting everything to one single format except has issues with OGV video
+Use DeVeDe first for the OGV video formats
+
+10.Open Office
+
+11.GTK Wiimote Whiteboard Software
+
+12.Take ScreenShot - Now simple just press the print screen button.
+
+13.Edubuntu Add-On (great for teachers/students)
+
+14.Gimp Image Editior (great can be complicated and will even import PDF files). Great for your Wacom Bamboo Connect.
+
+15.GNU Paint (very simple)
+
+16.KolourPaint (very simple as well...great for Gtk-recordmydesktop with your screencaptures)
+
+17.Inkscape (great vector image software)
+
+18.Filezilla (Ftp server software)
+
+19.PDFsam (great to combine different pdf's together)
+
+20.K9copy (to back up your Personal DVD collection). I recommand using the K9copyassistant for DVD copying.
+Make sure under your SETTINGS for the DVD icon....Does not have any check marks on BURNING section.
+If you do not....all of your burning options will fail....Unless you have the KDE enviroment.
+
+
+21.pyKaraoke (if you like karaoke)
+
+22.WINE (to run some Windows based software...for things you must have on Linux)
+
+23.APTonCD (lets you download all software, programs, and updates you have already installed 
+on your favorite pc's onto several others...
+or just lets you restore your lost Applications and settings from a fresh start)
+
+--------BELOW - YOU WILL FIND ALL THE TERMINAL COMMANDS FOR THIS - WITH THEIR EXPLANATIONS -----
+cd /var/cache/apt/archives (this command finds where the APT packages were loaded)
+
+sudo dpkg -i *.deb (this command will finally install the software)
+
+If not all of your programs are showing up then do this.....(takes a few hours)
+$ sudo apt-get install dpkg-repack fakeroot
+$ mkdir ~/dpkg-repack; cd ~/dpkg-repack
+$ fakeroot -u dpkg-repack `dpkg --get-selections | grep install | cut -f1`
+sudo dpkg -i *.deb (to install these packages)
+------------------------------This ENDS the COMMANDS for APTonCD------------------------------------
+
+24. TiLEM is a great TI-83+ emulator. You will need your calculator's ROM to use it.
+Roms are available here: http://web.tiscali.it/magazzinocartoniani/
+
+25. TiEMU is a great TI89 emulator. You will need your calculator's Rom to use it.
+Roms are available here: http://web.tiscali.it/magazzinocartoniani/
+
+26. Qcad is a great free simple CAD program. Saves and opens only DXF formats.
+
+27. FreeCAD is an OK CAD program. Can view 2D and 3D images. I do not like it.
+
+28. SagCAD is horrible CAD program.
+
+29. PyCAD is a CAD program that I never liked as well.
+
+30. SeaMonkey is a great web browser and Webpage design Suite. Plus you can use it with your email as well. 
+This is a must have!!!!
+
+31. FireFox is my greatest browser.
+
+32. Skype is a must have as well.
+
+33. Empathy IM Client is great if you need all your social media accounts on one IM system.
+
+34. TUXmath is great if you have a elementry, middle, high school kid struggling in basic math.
+
+35. VirtualBox OSE is great if you have to ever have Windows XP/Vista/7 installed on your Linux Machine.
+This is better than having a dual boot machine or running Linux inside of Windows. Boot Sectors 
+are never messed with this software. You will need to install the Meta-Package for USB support. I got it 
+from the Vitual Box website. Once the package is installed you will need to assign your user/groups
+permissions to allow VirtualBox to use the USB ports. We will need to give USB support to oursleves 
+and other groups. Below is the process to do this by adding USB filters.
+
+USB filters are needed for our USB devices and will be sent to the guest OS. From the main Virtualbox window, 
+open the Settings dialog, then the USB section, then click the little "add filter" button on the right side 
+of the screen. You should be able to create a filter from any currently connected USB devices.After you've done 
+this (maybe restart to be sure the host OS isn't capturing any of the USB devices for itself. Ubuntu will 
+try to automount the flash drive so you might also want to check and make sure that it is unmounted too) 
+then boot into the guest OS and you should see your USB devices. Next, I had the same problem and fixed 
+it by clicking in the VirtualBox group of my user. You can access it installing gnome-system-tools 
+(it does not come with Ubuntu 12.04 Precise Pangolin), either via the Ubuntu Software Center, Synaptic 
+or by typing in the terminal:(sudo apt-get install gnome-system-tools) Remember that to paste in the 
+terminal you have to use CTRL+SHIFT+C or use the right click option on your mouse. You will probably 
+have to enter your password to allow the installation and add a Y (as in yes) to finish installing the 
+packages.Then you head to your Dash home and type users. You will see two applications. The good one is 
+Users and Groups. You then have to click on Advanced settings for your user and enter your password.
+Now you will be shown a window with three tabs. Click on User Privileges. Find the line that says Use 
+Virtualbox virtualization solution and then OK. Change user group privileges
+
+Also, if you are looking to print with inside of VirtualBox Windows XP
+then you will have to change a setting in VirtualBox. I had to change the connection type from NAT to Bridge
+Connection. This is under DEVICES-NETWORK ADAPTERS - (attached to field). This is how I got my shared
+network printer to print since it was set up on a WindowsXP machine. After that, just find your Network printer 
+and install the proper printer driver.
+
+336.Bamboo Connect CTL470 - This is  how you get it to work on Ubuntu 12.04LTS. I never could figure out how
+to get it to work on Ubuntu 10.04LTS.
+
+terminal codes
+sudo add-apt-repository ppa:lekensteyn/wacom-tablet
+sudo apt-get update
+sudo apt-get install wacom-dkms
+
+37. Gmount-ISO  is a great if you ever need to mount or install using an ISO file.
+
+38. Flaming mouse pointer. Install (compiz-fusion-plugins-extra) and (CCompizconfig Settings Manager) from the
+Ubuntu Software Center...... Now go to System > Preferences > Compizconfig settings manager.....Locate (Show Mouse)
+Set the mouse's general mouse settings to their lost values of (0.1000,10,1)
+
+39. How to restore your panel in Ubuntu 10.04
+$ gconftool-2 --shutdown
+$ rm -rf ~/.gconf/apps/panel
+$ pkill gnome-panel
+
+
+
+40.LTSP is used for setting up thin-client PCs in a school or office setting. 
+Here are the settings to setup an LTSP
+sudo apt-get install ltsp-server-standalone openssh-server
+
+(have to have root access to change settings)
+(to setup root password ---- sudo passwd root)
+
+(install vim)
+aptitude install vim-nox
+
+(edit the dhcpd.conf with gedit)
+sudo vim /etc/ltsp/dhcpd.conf
+
+use these values
+subnet 192.168.0.0 netmask 255.255.255.0
+range 192.168.0.100 192.168.0.254
+domain name - username
+DNS - 11.111.11.111 
+broadcast 192.168.0.254
+routers 192.168.0.1
+
+(now to test server)
+sudo /etc/init.d/dhcp3-server start
+
+ps auxw|grep dhcpd
+
+sudo ltsp-build-client
+_____________________________________________________________________________
+Instructions for installing tilp and getting it to work with the TI-84+:
+
+1) Install the tilp package and its dependencies like libticables2-2: sudo apt-get install tilp
+
+2) Download the patch:
+wget https://launchpadlibrarian.net/79510370/new-devices-and-fixed-sysfs-warning.patch
+
+3) Apply the patch to the installed udev rules:
+sudo patch /lib/udev/rules.d/45-libticables.rules < new-devices-and-fixed-sysfs-warning.patch 
+
+4) Add yourself to the tilp group:
+sudo usermod -a -G tilp $USER
+
+5) Re-login to apply the group settings (Restart Computer)
+
+6) The TI-84+ uses an USB-A - USB-B connector which is called DirectLink. This should be detected automatically. 
+Connect the calculator now to the computer. If you've previously had connected it already, disconnect and reconnect it.
+7) Now make known to tilp that you're using a TI-84+ calculator by running:
+tilp --calc=ti84+ --cable=DirectLink
+
+This will set the calc=TI84+ and cable_model=DirectLink in the ~/.tilp configuration file. After running the above command, it's sufficient to run just tilp in the future (using the application menu or by running the command directly).
+
+-----------------------------------------------------------------------------
+
+USE AVAST with Ubuntu 10.04 Live CD
+open terminal then type
+sudo sysctl –w kernel.shmmax=128000000
+
+on a live cd their will be no asking for a password bet the command will fix the error on the live cd so that you can run the installed live cd

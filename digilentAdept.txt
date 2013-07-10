@@ -56,7 +56,7 @@ Device: Nexys2
     
 
 5.  Start up your device with 
-           djtcgcfg init -d Nexys2
+           djtgcfg init -d Nexys2
            
     note:  my device in User Name field is Nexys2, but yours may be different
     

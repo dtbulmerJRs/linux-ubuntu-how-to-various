@@ -249,3 +249,11 @@ open terminal then type
 sudo sysctl –w kernel.shmmax=128000000
 
 on a live cd their will be no asking for a password bet the command will fix the error on the live cd so that you can run the installed live cd
+
+
+----------------------------------------------------------------------------------
+Have any folder or directory on the left side panel in your linux file explorer (ie Nautilus)
+
+ctrl + d
+
+simple really

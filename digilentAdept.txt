@@ -1,0 +1,68 @@
+HOW TO INSTALL AND USE DIGELENT ADEPT IN UBUNTU
+
+sources from http://sadgeeksinsnow.blogspot.com/2012/01/installing-digilent-adept-2-on-linux.html
+
+***************************************************************************************
+******
+******        INSTALLATION
+******
+***************************************************************************************
+.
+1.  Goto: http://www.digilentinc.com/Products/Detail.cfm?Prod=ADEPT2 and download the Run time software for your Linux architecture (32 or 64 bit)
+
+2.  Decompress the downloaded file, this requires gzip
+    eg. “gzip -d digilent.adept.runtime_2.8.2-i686.tar.gz”
+
+3.  Untar the the decompressed file, this requires tar
+    eg. “tar -xvf digilent.adept.runtime_2.8.2-i686.tar”
+
+4.  Enter the directory which contains the run time installer (cd into it)
+
+5.  Execute the install.sh script, this will require superuser privileges (speak with your system administrator)
+    eg. “sudo ./install.sh”
+6.  Just Press [enter] on menu, and press [Enter] again on next menu
+
+7.  For the utilities...Goto: http://www.digilentinc.com/Products/Detail.cfm?Prod=ADEPT2 and downlaod the Utilities software for your Linux architecture(32 or 64 bit)
+8.  Decompress the downloaded file, this requires gzip
+    eg. “gzip -d digilent.adept.utilities_2.1.1-i686.tar.gz”
+9.  Untar the decompressed file, this requires tar
+    eg. “tar -xvf digilent.adept.utilities_2.1.1-i686.tar”
+10.  Enter the directory which contains the utilities installer
+11.  Execute the install.sh script, this will require superuser privileges (speak with your system administrator)
+     eg. “sudo ./install.sh”
+12.  Press [enter], press [Enter]
+
+
+
+****************************************************************************************
+******
+******       USE OF ADEPT
+******
+****************************************************************************************
+
+1.   First, make a working project in verilog, and have the .bit file for the device
+2.   Make sure the device is properly inserted into a usb port (in my case, it is a Spartan 3E FPGA)
+3.   cd into the directory of your project (most importantly where your .bit file is located)
+4.   find your device(s) with 
+          djtgcfg enum
+           
+    Which results in something like:
+    Found 1 device(s)
+
+Device: Nexys2
+    Product Name:   DOnbUsb1 V2.0
+    User Name:      Nexys2
+    Serial Number:  10054D250681
+    
+
+5.  Start up your device with 
+           djtcgcfg init -d Nexys2
+           
+    note:  my device in User Name field is Nexys2, but yours may be different
+    
+6.  program the .bit file onto the board with:
+           djtgcfg prog -d Nexys2 -i 0 -f your_bit_file.bit
+           
+7.  Remember, it is not Adept's responsibility to make sure your bit program is valid and working.  That is the programmers.
+    Adept just places program onto board
+           

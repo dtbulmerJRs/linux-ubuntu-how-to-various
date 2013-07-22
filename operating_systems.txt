@@ -1,0 +1,60 @@
+// Process Descriptors
+example, if you want to find out what a processes is doing and find out how many file descriptors (fd) are being used. You will surprised to find out that process does open all sort of files:
+=> Actual log file
+=> /dev files
+=> UNIX Sockets
+=> Network sockets
+=> Library files /lib /lib64
+=> Executables and other programs etc
+
+
+1.) find the pid of process
+  ps-aux will print out all processes, and you can probabily find it that way
+  
+  or 
+  
+  you can directly find it by
+  
+  ps aux | grep processname
+  or
+  pidof processname
+  
+2.) now find the file descriptors with this pid
+
+  lsof -p pidofprocess
+  lsof -a -p pidofprocess
+  
+  or 
+  
+  cd /proc/pidofprocess/fd
+  ls -l | less
+  
+  and to count open files,
+  ls -l | wc -l
+  
+  to count file handles of any sort
+  lsof | wc -1
+  
+  list file descriptors in kernal memory
+  sysclt fs.file-nr
+  returns the number of allocated file handles, unused file handles, and the system wide max number of file handles (in this order)
+  
+  only get system max file handles
+  sysctl fs.file-max
+  
+
+/proc/PID/cmdline : process arguments
+/proc/PID/cwd : process current working directory (symlink)
+/proc/PID/exe : path to actual process executable file (symlink)
+/proc/PID/environ : environment used by process
+/proc/PID/root : the root path as seen by the process. For most processes this will be a link to / unless the process is running in a chroot jail.
+/proc/PID/status : basic information about a process including its run state and memory usage.
+/proc/PID/task : hard links to any tasks that have been started by this (the parent) process.
+
+
+
+
+
+
+      Works Cited
+      http://www.cyberciti.biz/tips/linux-procfs-file-descriptors.html

@@ -1,0 +1,41 @@
+/**********************************************************
+*
+* How to interact with linux terminal in a c/c++ program
+*
+***********************************************************
+*/
+
+This one was a no brainer after spending hours spinning wheels about it.
+It all has to do with calls to the system() function, like:
+
+system("vmstat -f -d -D > /home/usr/Documents/os_logs_from_vmstat.txt");
+
+you could in theory run a piece of data through multiple processes
+like:
+
+system("mypaint -f blob.png > $VAR);
+system("pixilate -t &VAR);  // note pixilate is a fictional process, not intended to reference any processes I know of.
+// also note that I am not sure that $VAR applies in the depicted fashion, think of this as an example
+
+make sure to include the headers for system stuff
+#include <stdio.h>      /* printf */
+#include <stdlib.h>     /* system, NULL, EXIT_FAILURE *
+
+
+/**********************************************************
+*
+* How to view minute os stats in linux
+*
+***********************************************************
+*/
+
+if you remember your OS, youll remember that processes use file handles, forks, system calls, and other virtual memory.
+To view this info about your linux machine, just look up vmstat:
+
+$ man vmstat
+
+write details to file
+
+vmstat -d > /home/usr/Documents/vmstats.txt
+
+useful for metrics

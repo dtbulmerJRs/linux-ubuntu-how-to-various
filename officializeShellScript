@@ -1,0 +1,20 @@
+Do you want a shell script to run in terminal like:
+  MYSCRIPTNAME  <args>
+  
+instead of cd'ing to the directory and running it there?
+
+well all you have to do is copy the script over to your usr/bin directory
+
+first change the permissions to be writable by all
+chmod +w myscript.sh
+
+you have some options as what to do:
+A.
+sudo install myscript.sh /usr/local/bin/MYSCRIPTNAME
+
+B.
+sudo cp myscript.sh /usr/bin/.
+
+Note that the location /usr/bin is prefered by myself, because it is more accessable than 
+/usr/local/bin (meaning all users can use it).  The local directory makes it run for the 
+current user only.

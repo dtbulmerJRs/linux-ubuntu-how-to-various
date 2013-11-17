@@ -257,3 +257,14 @@ Have any folder or directory on the left side panel in your linux file explorer 
 ctrl + d
 
 simple really
+
+------------------------------------------------------------------------------------------------------
+force install a .deb program
+
+use terminal and cd to the directory where your .deb file is located
+
+sudo dpkg -i --force-depends package.deb
+or
+sudo dpkg -i --force-all package.deb
+
+-------------------------------------------------------------------------------------------------------

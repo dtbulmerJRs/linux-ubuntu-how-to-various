@@ -268,3 +268,10 @@ or
 sudo dpkg -i --force-all package.deb
 
 -------------------------------------------------------------------------------------------------------
+install a .run program
+
+use terminal and cd to directory where you .run file is located
+you just need to give the .run file the correct authorization.
+
+chmod +x your_run_program.run
+./your_run_program.run

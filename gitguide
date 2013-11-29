@@ -1,0 +1,16 @@
+------------------------------------------
+put an enire directory on github
+
+
+first make an empty repo online on github.com
+copy the ssh url into clipboard (see right panel, last one, click ssh and copy the url you see
+example: my url is git@github.com:dtbulmerJRs/pie_portfolio.git
+ my repo folder is pie_portfolio
+cd into pie_portfolio, for you replace pie_portfolio with what yours is named.
+
+git init pie_portfolio
+git remote add pie_portfolio git@github.com:dtbulmerJRs/pie_portfolio.git
+git commit -u "PUT ENTIRE FOLDER ON GIT"
+git push pie_portfolio
+
+-------------------------------------------

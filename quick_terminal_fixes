@@ -1,0 +1,7 @@
+***************************************************************************
+mass rename files by prepending a string to the front
+
+cd into directory and type this into terminal:
+'s/^/ASTRING/' * 
+replace ASTRING with what ever you want all the files to start with
+***************************************************************************

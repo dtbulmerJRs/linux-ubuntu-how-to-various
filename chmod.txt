@@ -1,0 +1,16 @@
+----------------------------------------------------------------------------------
+chmod a directory and all its subdirectories and files
+
+chmod itself only changes the selected folder/file; youll need a recursive 
+process to do all the subdirectories and files in them.
+
+first cd into the directory where the folder you want is located
+dont go inside the folder you want to change.
+
+in the terminal if you want a folder and all its subfolders to be chmod 755
+
+sudo find -type d -exec chmod 755 {} \;
+
+if you want all the files to be chmod 633
+sudo find -type f -exec chmod 633 {} \;
+---------------------------------------------------------------------------------

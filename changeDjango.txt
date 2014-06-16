@@ -1,1 +1,4 @@
-/*******
+/*********
+django versions are easy to change with pip
+sudo pip install -U Django==1.1.1
+*********/

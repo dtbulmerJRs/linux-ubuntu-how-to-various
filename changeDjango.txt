@@ -2,3 +2,22 @@
 django versions are easy to change with pip
 sudo pip install -U Django==1.1.1
 *********/
+
+
+/**********************************
+Ever wanted to use an old, existing, legacy database with a Django Project? That’s totally possible!
+
+Django allows you to create a models.py file based on an existing database. To do this, you first have to make sure your database settings are properly specified in the settings.py file. Here’s an example of what the database settings in your settings.py file should look like:
+DATABASE_ENGINE = ‘mysql’ # ‘postgresql_psycopg2′, ‘postgresql’, ‘mysql’, ’sqlite3′ or ‘oracle’.
+DATABASE_NAME = ‘YourDataBaseName’ # Or path to database file if using sqlite3.
+DATABASE_USER = ‘YourDataBaseUser’ # Not used with sqlite3.
+DATABASE_PASSWORD = ’YourVerySecretPassword’ # Not used with sqlite3.
+DATABASE_HOST = ” # Set to empty string for localhost. Not used with sqlite3.
+DATABASE_PORT = ” # Set to empty string for default. Not used with sqlite3.
+
+Then, from the command line, type:
+
+python mysite/manage.py inspectdb > mysite/myapp/models.py
+
+That should be all! Django created a models.py for you, based on the contents of the existing database.
+*************************************/

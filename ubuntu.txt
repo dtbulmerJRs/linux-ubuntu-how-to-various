@@ -275,3 +275,10 @@ you just need to give the .run file the correct authorization.
 
 chmod +x your_run_program.run
 ./your_run_program.run
+-----------------------------------------------------------------------------------------------
+
+reload the missing ubuntu top bar on login (where the menu items are missing)
+it is a problem with unity so in command line
+unity --reset
+
+

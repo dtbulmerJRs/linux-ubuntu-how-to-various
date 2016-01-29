@@ -1,0 +1,17 @@
+Instructions
+1.Access your "Settings" menu
+2.Select "Wireless & networks"
+3.Select "Wi-Fi settings" to set up and manage wireless access points
+4.Check to see if your Wi-Fi connection is turned on indicated by a green check mark.
+5.Check to see what Wi-Fi networks are available to you. If you are near a Beachnet+ wireless access point, "Beachnet+" should appear in the list of Wi-Fi networks recognized by your phone or tablet
+6.Tap "beachnet+"
+7.Enter required information (may require scrolling to see these specific fields) and tap Connect when done:
+•EAP method = select PEAP
+•Phase 2 authentication = select MSCHAPv2
+•For BeachNet+, Identity = enter your campus ID
+•Password = enter your BeachID password
+
+        Please note – you can ignore the following configuration field as you scroll:
+•Anonymous Identity (open text field)
+
+from https://its-knowledge01.campus.ad.csulb.edu/pages/viewpage.action;jsessionid=2F303C18E5A4658FD90F835DBB106B8B?pageId=5308455

@@ -281,4 +281,16 @@ reload the missing ubuntu top bar on login (where the menu items are missing)
 it is a problem with unity so in command line
 unity --reset
 
+----------------------------------------------------------------------------------------------------------------
+if your program is in a folder and you want it to run as a command line
+ie  sublime text 2 is all ran from a folder Sublime and you just want to type sublime in terminal to run it
 
+1. cd to folder (not in it but outside of it), make sure you have the executable, move the folder to /opt/
+sudo mv Sublime /opt/
+2. officialize the executable (this case it is sublime_text and it is now called sublime)
+sudo ln -s /opt/Sublime/sublime_text /usr/bin/sublime
+3. create desktop launcher
+sudo sublime /usr/share/applications/sublime.desktop
+
+paste info
+example:

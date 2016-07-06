@@ -315,3 +315,21 @@ TargetEnvironment=Unity
 
 now you are done!
 ----------------------------------------------------------------------------------------------------------------
+
+Restore date time in top bar in unity
+
+
+        Reinstall indicator-datetime. It should be installed by default, but just in case you have removed it unknowingly, it is best to run the install command again.
+
+        sudo apt-get install indicator-datetime
+
+        Next, we are going to reconfigure the date time:
+
+        sudo dpkg-reconfigure --frontend noninteractive tzdata
+
+        Lastly, restart unity.
+
+        sudo killall unity-panel-service
+
+    That’s it. The date and time indicator will appear in the menu bar now.
+----------------------------------------------------------------------------------------------------------------------

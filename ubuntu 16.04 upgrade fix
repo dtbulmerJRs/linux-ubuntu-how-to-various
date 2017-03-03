@@ -1,0 +1,12 @@
+/////////////////////////////////////
+
+After upgrading from 14 to 16.04, the apt-get update wouldnt work, so here are some fixes
+
+strace appstreamcli refresh-index  // see what error on renaming occurs
+// permission denied during rename of /var/cache/app-info/xapian/default.
+chmod 777 /var/cache/app-info/xapian/default -R
+
+////////////////////////////////////
+
+
+

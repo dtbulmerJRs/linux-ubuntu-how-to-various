@@ -1,0 +1,26 @@
+recently i had trouble using apt-get to install gcc-doc
+
+here is how to fix this problem
+
+to find problem:
+sudo dpkg --configure -a
+
+dtb2@dtb2-HP-15-Notebook-PC:~$ sudo dpkg --configure -a
+Setting up libapt-inst2.0:amd64 (1.2.20) ...
+Setting up apt-utils (1.2.20) ...
+dpkg: error processing package gcc-doc (--configure):
+ package is in a very bad inconsistent state; you should
+ reinstall it before attempting configuration
+Processing triggers for libc-bin (2.23-0ubuntu7) ...
+Errors were encountered while processing:
+ gcc-doc
+
+the bottom will id the problem!!!
+
+remove that program:
+sudo apt-get remove --purge gcc-doc
+
+
+
+reference:   https://ubuntuforums.org/showthread.php?t=1642173
+

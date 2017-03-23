@@ -17,8 +17,16 @@ Errors were encountered while processing:
 
 the bottom will id the problem!!!
 
+
 remove that program:
 sudo apt-get remove --purge gcc-doc
+
+if that does work then find relevant file and remove:
+sudo rm /var/lib/dpkg/info/gcc-doc*
+
+then force remove:
+sudo dpkg -r --force-depends --force-remove-reinstreq gcc-doc
+
 
 
 
